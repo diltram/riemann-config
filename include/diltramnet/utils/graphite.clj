@@ -5,4 +5,4 @@
 (defn add-environment-to-graphite [event] (str "home.diltram.net", (riemann.graphite/graphite-path-percentiles event)))
 
 (def graph (async-queue! :graphite {:queue-size 1000}
-            (graphite {:host "graphitea" :path add-environment-to-graphite})))
+            (graphite {:host "dilu-monitoring" :path add-environment-to-graphite})))
